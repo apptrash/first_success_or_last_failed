@@ -13,7 +13,7 @@ suspend fun makeRequest(duration: Duration, id: Int): Boolean {
     try {
         delay(duration.toJavaDuration())
     } catch (e: CancellationException) {
-        println("Request $id is cancelled, execution time: $duration")
+        println("Request $id is cancelled")
         throw e
     }
     val isOk = isSuccessful()
